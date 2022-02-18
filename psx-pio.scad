@@ -69,8 +69,8 @@ difference() {
 	translate([1, 1.6]) cube([w_body - 2, d_body - 1.6 * 2, h_connector_part]);
 
 	for(i = [-16.5 : 1 : 16.5]) {
-		translate([w_body / 2 + 1.27 * i - 0.75 / 2, 1]) cube([0.75, d_body - 2, h_total]);
-		translate([w_body / 2 + 1.27 * i - 0.75 / 2, -chin_d, h_body]) cube([0.75, d_body + chin_d * 2, h_total]);
+		translate([w_body / 2 + 1.27 * i - 0.8 / 2, 0.9]) cube([0.8, d_body - 1.8, h_total]);
+		translate([w_body / 2 + 1.27 * i - 0.8 / 2, -chin_d, h_body]) cube([0.8, d_body + chin_d * 2, h_total]);
 	}
 }
 
