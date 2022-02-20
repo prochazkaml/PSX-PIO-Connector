@@ -1,22 +1,4 @@
-layer_h = .2;
-
-w_body = 46;
-d_body = 5.5;
-
-h_body = 12;
-h_top = .6;
-
-h_total = h_body + h_top;
-
-h_connector_part = 6;
-
-connector_peg_w = 6;
-connector_peg_d = 1.5;
-
-side_w = 6;
-side_h_start = h_connector_part + 3;
-
-chin_d = 3;
+include <psx-pio-common.scad>
 
 module chin() {
 	rotate([90, 0, -90]) linear_extrude(w_body, center = true) 
@@ -26,6 +8,10 @@ module chin() {
 			[chin_d, h_total],
 			[0, h_total]
 		]);
+}
+
+module sidehole() {
+	translate([side_w / 2, 0, side_h_start + side_w / 4]) rotate([0, -atan(0.5), 0]) cylinder(h = 20, d = 3.2, $fn = 256, center = true);
 }
 
 module side() {
@@ -38,7 +24,7 @@ module side() {
 				[0, h_total]
 			]);
 
-translate([side_w / 2, 0, side_h_start + side_w / 4]) rotate([0, -atan(0.5), 0]) cylinder(h = 20, d = 3.2, $fn = 256, center = true);
+		sidehole();
 	}
 
 // Uncomment the line below to get a nut
