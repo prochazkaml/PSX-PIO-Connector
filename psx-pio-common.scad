@@ -24,3 +24,7 @@ top_hole_w = 6;
 top_side_w_offset = (h_total - (side_h_start + side_w / 2)) / 2;
 
 logo_h = 0.4;
+
+module sidehole() {
+	translate([side_w / 2, 0, side_h_start + side_w / 4]) rotate([0, -atan(0.5), 0]) cylinder(h = 20, d = 3.2, $fn = 256, center = true);
+}

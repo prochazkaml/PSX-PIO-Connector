@@ -1,5 +1,4 @@
 include <psx-pio-common.scad>
-use <psx-pio.scad>
 
 difference() {
 	translate([0, d_body + chin_d]) rotate([90, 0, 0]) linear_extrude(d_body + chin_d * 2) polygon([
